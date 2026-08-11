@@ -3,7 +3,7 @@
 namespace ozantopoglu\sumoSelect;
 
 
-use yii\base\InputWidget;
+use yii\widgets\InputWidget;
 use yii\helpers\Url;
 use ozantopoglu\sumoSelect\assets\SumoSelectAsset;
 
