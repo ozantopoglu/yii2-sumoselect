@@ -3,11 +3,11 @@
 namespace nurielmeni\sumoSelect;
 
 
-use yii\base\Widget;
+use yii\base\InputWidget;
 use yii\helpers\Url;
 use nurielmeni\sumoSelect\assets\SumoSelectAsset;
 
-class SumoSelectWidget extends Widget
+class SumoSelectWidget extends InputWidget
 {
 
     /**
@@ -20,24 +20,24 @@ class SumoSelectWidget extends Widget
     public $options = [];
     public $multiple = false;
     public $config = [
-        'placeholder' => 'בחר כאן',
+        'placeholder' => 'Select',
         'csvDispCount' => 2,
-        'captionFormat' => 'נבחרו',
-        'captionFormatAllSelected' => 'כולם נבחרו!',
+        'captionFormat' => '{0} Selected',
+        'captionFormatAllSelected' => '{0} all selected!',
         'floatWidth' => 500,
         'forceCustomRendering' => false,
         'nativeOnDevice' => ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
         'outputAsCSV' => false,
-        'csvSepChar' => ';',
+        'csvSepChar' => ',',
         'okCancelInMulti' => false,
         'isClickAwayOk' => false,
         'triggerChangeCombined' => true,
         'selectAll' => true,
         'search' => false,
-        'searchText' => 'חפש...',
-        'noMatch' => 'לא נמצא',
+        'searchText' => 'Search...',
+        'noMatch' => 'No matches for "{0}"',
         'prefix' => '',
-        'locale' =>  ['OK', 'בטל', 'בחר הכל'],
+        'locale' =>  ['OK', 'Cancel', 'Select All'],
         'up' => 'false',
         'showTitle' => 'true',
     ];
