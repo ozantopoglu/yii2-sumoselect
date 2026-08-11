@@ -1,5 +1,5 @@
 {
-    "name": "ozantopoglu/yii2-sumoselect",
+    "name": "ozantopoglu/yii2sumoselect",
     "type": "yii2-extension",
     "description": "Sumo select integration for Yii2",
     "keywords": ["yii2", "sumoselect","helper"],
