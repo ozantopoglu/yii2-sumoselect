@@ -1,5 +1,5 @@
 <?php
-namespace nurielmeni\sumoSelect\views;
+namespace ozantopoglu\sumoSelect\views;
 
 use yii\web\View;
 
