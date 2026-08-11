@@ -1,16 +1,16 @@
 {
-    "name": "nurielmeni/yii2-social-sharing",
+    "name": "ozantopoglu/yii2-sumo-select",
     "type": "yii2-extension",
-    "description": "The Imagine integration for the Yii framework",
-    "keywords": ["yii2", "imagine", "image", "helper"],
+    "description": "Sumo select integration for Yii2",
+    "keywords": ["yii2", "sumoselect","helper"],
     "license": "BSD-3-Clause",
     "support": {
-        "source": "https://github.com/nurielmeni/yii2SumoSelect"
+        "source": "https://github.com/ozantopoglu/yii2SumoSelect"
     },
     "authors": [
         {
-            "name": "Meni Nuriel",
-            "email": "nurielmeni@gmail.com"
+            "name": "Ozan Topoglu",
+            "email": "ozanotopoglu@gmail.com"
         }
     ],
     "require": {
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "nurielmeni\\sumoSelect\\": ""
+            "ozantopoglu\\sumoSelect\\": ""
         }
     }
 }
