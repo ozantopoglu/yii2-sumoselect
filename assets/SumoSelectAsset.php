@@ -13,10 +13,9 @@ class SumoSelectAsset extends AssetBundle
     public $publishOptions = [
         'forceCopy' => YII_DEBUG
     ];
-    public $sourcePath = '@nurielmeni/sumoSelect/assets';
+    public $sourcePath = '@ozantopoglu/sumoSelect/assets';
     public $css = [
-        'css/sumoselect.min.css',
-        'css/sumoselect-rtl.css',
+        'css/sumoselect.min.css'
     ];
     public $js = [
         'js/jquery.sumoselect.min.js',
