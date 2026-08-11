@@ -7,7 +7,7 @@ $sumoConfig = json_encode($config);
 ?>
 
 <select id="<?= $name ?>" <?= $multiple ? 'multiple="multiple"' : '' ?> class="sumo-select">
-    <?php foreach ($options as $value => $text) : ?>
+    <?php foreach ($data as $value => $text) : ?>
         <option value="<?= $value ?>"><?= $text ?></option>
     <?php endforeach; ?>
 </select>

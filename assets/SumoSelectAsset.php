@@ -15,7 +15,8 @@ class SumoSelectAsset extends AssetBundle
     ];
     public $sourcePath = '@ozantopoglu/sumoSelect/assets';
     public $css = [
-        'css/sumoselect.min.css'
+        'css/sumoselect.min.css',
+        'css/sumoselect-override.css'
     ];
     public $js = [
         'js/jquery.sumoselect.min.js',

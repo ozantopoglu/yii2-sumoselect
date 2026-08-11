@@ -17,29 +17,10 @@ class SumoSelectWidget extends InputWidget
     /**
      * @options: Array of value => text pairs
      */
-    public $options = [];
+    public $data = [];
     public $multiple = false;
     public $config = [
-        'placeholder' => 'Select',
-        'csvDispCount' => 2,
-        'captionFormat' => '{0} Selected',
-        'captionFormatAllSelected' => '{0} all selected!',
-        'floatWidth' => 500,
-        'forceCustomRendering' => false,
-        'nativeOnDevice' => ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
-        'outputAsCSV' => false,
-        'csvSepChar' => ',',
-        'okCancelInMulti' => false,
-        'isClickAwayOk' => false,
-        'triggerChangeCombined' => true,
-        'selectAll' => true,
-        'search' => false,
-        'searchText' => 'Search...',
-        'noMatch' => 'No matches for "{0}"',
-        'prefix' => '',
-        'locale' =>  ['OK', 'Cancel', 'Select All'],
-        'up' => 'false',
-        'showTitle' => 'true',
+
     ];
 
     public function init()
@@ -56,7 +37,7 @@ class SumoSelectWidget extends InputWidget
     {
         return $this->render('sumoSelect', [
             'name' => $this->name,
-            'options' => $this->options,
+            'data' => $this->data,
             'multiple' => $this->multiple,
             'config' => $this->config,
         ]);
