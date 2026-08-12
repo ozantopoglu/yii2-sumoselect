@@ -1,3 +1,11 @@
 .select-all{
     box-sizing: content-box;
 }
+
+.SumoSelect {
+    width: 100%;
+}
+
+.SumoSelect.open>.optWrapper {
+    min-width: 200px;
+}

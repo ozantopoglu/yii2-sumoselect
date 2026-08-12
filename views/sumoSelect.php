@@ -1,22 +1,13 @@
 <?php
 namespace ozantopoglu\sumoSelect\views;
-
-use yii\web\View;
-
-$sumoConfig = json_encode($config);
+// preg_replace removes only the literal trailing [] (rtrim would strip individual chars)
+$baseName = preg_replace('/\[\]$/', '', $inputName);
 ?>
-
-<select id="<?= $name ?>" <?= $multiple ? 'multiple="multiple"' : '' ?> class="sumo-select">
+<?php if ($multiple): ?>
+<input type="hidden" name="<?= $baseName ?>">
+<?php endif; ?>
+<select id="<?= $name ?>" name="<?= $inputName ?>" <?= $multiple ? 'multiple="multiple"' : '' ?> class="sumo-select">
     <?php foreach ($data as $value => $text) : ?>
-        <option value="<?= $value ?>"><?= $text ?></option>
+        <option value="<?= $value ?>" <?= in_array((string)$value, $currentValue) ? 'selected' : '' ?>><?= $text ?></option>
     <?php endforeach; ?>
 </select>
-
-<?php
-
-$js = <<<JS
-    console.log(JSON.parse('$sumoConfig'));
-    $('#$name').SumoSelect(JSON.parse('$sumoConfig'));
-JS;
-
-$this->registerJs($js, View::POS_READY);
