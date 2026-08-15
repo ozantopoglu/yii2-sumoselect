@@ -22,6 +22,8 @@ class SumoSelectWidget extends InputWidget
     public $config = [];
     /** Set to the PJAX container ID when used inside a pjax-enabled GridView */
     public $pjaxContainerId;
+    public $onOpen = '';
+    public $onClose = '';
 
     public function init()
     {
@@ -77,7 +79,15 @@ class SumoSelectWidget extends InputWidget
 function {$fnName}() {
     var \$el = jQuery('#{$inputId}');
     if (!\$el.length || \$el.hasClass('SumoUnder')) { return; }
-    \$el.SumoSelect({$configJson});
+    var cfg = Object.assign({}, {$configJson});
+    \$el.on('sumo:opened', function(sumo) {
+        $this->onOpen;
+    });
+    \$el.on('sumo:closed', function(sumo) {
+        $this->onClose;
+    });
+
+    \$el.SumoSelect(cfg);
     var \$okBtn = \$el.closest('.SumoSelect').find('.btnOk');
     if (\$okBtn.length) {
         // Capture-phase: block select change events AND search-input change-on-blur from reaching
@@ -108,6 +118,7 @@ function {$fnName}() {
 {$pjaxTarget}.off('{$evKey}').on('{$evKey}', function() {
     setTimeout({$fnName}, 100);
 });
+jQuery(".sumo-select").toggleClass("hidden");
 JS;
         // Use inputId as key so each instance gets its own script block (no MD5 collisions)
         $view->registerJs($initJs, View::POS_READY, $fnName);

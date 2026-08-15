@@ -23,7 +23,7 @@
     display: inline-block;
     width: 0;
     height: 0;
-    margin-left: 8px;
+    margin-left: 0px;
     margin-top: 11px;
     vertical-align: middle;
     border-top: 0.3em solid #0c0c0c;
@@ -47,4 +47,12 @@ p.SelectBox {
 .SumoSelect:focus>.CaptionCont, .SumoSelect:hover>.CaptionCont {
     box-shadow: 0 0 1px #11a911;
     border-color: #11a911;
+}
+
+.SumoSelect>.CaptionCont>span {
+    padding-right: 15px;
+}
+
+.SumoSelect>.CaptionCont>label {
+    width: 10px;
 }
