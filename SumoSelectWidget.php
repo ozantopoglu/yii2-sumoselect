@@ -88,8 +88,9 @@ function {$fnName}() {
     \$el.on('sumo:closed', function(sumo) {
         $this->onClose;
     });
-
+    \$el.parent().children().toggleClass("hidden");
     \$el.SumoSelect(cfg);
+    
     var \$okBtn = \$el.closest('.SumoSelect').find('.btnOk');
     if (\$okBtn.length) {
         // Capture-phase: block select change events AND search-input change-on-blur from reaching
@@ -120,7 +121,7 @@ function {$fnName}() {
 {$pjaxTarget}.off('{$evKey}').on('{$evKey}', function() {
     setTimeout({$fnName}, 100);
 });
-jQuery('#{$inputId}').parent().children().toggleClass("hidden");
+
 JS;
         // Use inputId as key so each instance gets its own script block (no MD5 collisions)
         $view->registerJs($initJs, View::POS_READY, $fnName);
