@@ -9,3 +9,42 @@
 .SumoSelect.open>.optWrapper {
     min-width: 200px;
 }
+
+.SumoSelect > .CaptionCont { 
+    border: none;
+}
+
+.SumoSelect>.CaptionCont>label>i {
+    background-image: none;
+    position: relative;
+}
+.SumoSelect>.CaptionCont>label>i::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    margin-top: 11px;
+    vertical-align: middle;
+    border-top: 0.3em solid #0c0c0c;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    position: absolute;
+}
+
+p.SelectBox {
+    padding: 2px 0px;
+}
+
+.SumoSelect.open .search-txt {
+    padding: 2px 4px;
+}
+
+.SumoSelect>.CaptionCont {
+    background-color: transparent;
+}
+
+.SumoSelect:focus>.CaptionCont, .SumoSelect:hover>.CaptionCont {
+    box-shadow: 0 0 1px #11a911;
+    border-color: #11a911;
+}
