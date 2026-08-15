@@ -45,7 +45,8 @@ class SumoSelectWidget extends InputWidget
             $inputName = $this->name . ($this->multiple ? '[]' : '');
             $inputId = $this->name;
         }
-
+        // preg_replace removes only the literal trailing [] (rtrim would strip individual chars)
+        $baseName = preg_replace('/\[\]$/', '', $inputName);
         $currentValue = $this->hasModel()
             ? array_map('strval', (array) ($this->model->{$this->attribute} ?? []))
             : [];
@@ -55,6 +56,7 @@ class SumoSelectWidget extends InputWidget
         return $this->render('sumoSelect', [
             'name'         => $inputId,
             'inputName'    => $inputName,
+            'baseName'     => $baseName,
             'data'         => $this->data,
             'multiple'     => $this->multiple,
             'currentValue' => $currentValue,
@@ -118,7 +120,7 @@ function {$fnName}() {
 {$pjaxTarget}.off('{$evKey}').on('{$evKey}', function() {
     setTimeout({$fnName}, 100);
 });
-jQuery(".sumo-select").toggleClass("hidden");
+jQuery('#{$inputId}').parent().children().toggleClass("hidden");
 JS;
         // Use inputId as key so each instance gets its own script block (no MD5 collisions)
         $view->registerJs($initJs, View::POS_READY, $fnName);

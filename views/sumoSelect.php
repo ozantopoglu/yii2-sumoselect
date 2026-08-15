@@ -1,7 +1,6 @@
 <?php
 namespace ozantopoglu\sumoSelect\views;
-// preg_replace removes only the literal trailing [] (rtrim would strip individual chars)
-$baseName = preg_replace('/\[\]$/', '', $inputName);
+
 ?>
 <?php if ($multiple): ?>
 <input type="hidden" name="<?= $baseName ?>">
